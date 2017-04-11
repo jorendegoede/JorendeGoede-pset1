@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
+
         // imageviews
         ImageView hat = (ImageView) findViewById(R.id.Hat);
         ImageView ears = (ImageView) findViewById(R.id.Ears);
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         ImageView nose = (ImageView) findViewById(R.id.Nose);
         ImageView glasses = (ImageView) findViewById(R.id.Glasses);
         ImageView shoes = (ImageView) findViewById(R.id.Shoes);
+
         // save visibility
         savedInstanceState.putInt("hat", hat.getVisibility());
         savedInstanceState.putInt("ears", ears.getVisibility());
