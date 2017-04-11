@@ -1,6 +1,7 @@
 package com.example.jorendegoede.studentname_pset1;
 
 import android.content.res.Configuration;
+import android.opengl.Visibility;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,30 +17,49 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-
-//    @Override
-//    public void onConfigurationChanged(Configuration newConfig) {
-//        super.onConfigurationChanged(newConfig);
-//        // switch from portrait to landscape
-//        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-//            setContentView(R.layout.horizontal);
-//        }
-//        // switch landscape to portrait
-//        else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
-//            setContentView(R.layout.activity_main);
-//        }
-//    }
-
+    
     @Override
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        // imageviews
+        ImageView hat = (ImageView) findViewById(R.id.Hat);
+        ImageView ears = (ImageView) findViewById(R.id.Ears);
+        ImageView mustache = (ImageView) findViewById(R.id.Mustache);
+        ImageView eyes = (ImageView) findViewById(R.id.Eyes);
+        ImageView arms = (ImageView) findViewById(R.id.Arms);
+        ImageView mouth = (ImageView) findViewById(R.id.Mouth);
+        ImageView eyebrows = (ImageView) findViewById(R.id.Eyebrows);
+        ImageView nose = (ImageView) findViewById(R.id.Nose);
+        ImageView glasses = (ImageView) findViewById(R.id.Glasses);
+        ImageView shoes = (ImageView) findViewById(R.id.Shoes);
+        // save visibility
+        savedInstanceState.putInt("hat", hat.getVisibility());
+        savedInstanceState.putInt("ears", ears.getVisibility());
+        savedInstanceState.putInt("mustache", mustache.getVisibility());
+        savedInstanceState.putInt("eyes", eyes.getVisibility());
+        savedInstanceState.putInt("arms", arms.getVisibility());
+        savedInstanceState.putInt("mouth", mouth.getVisibility());
+        savedInstanceState.putInt("eyebrows", eyebrows.getVisibility());
+        savedInstanceState.putInt("nose", nose.getVisibility());
+        savedInstanceState.putInt("glasses", glasses.getVisibility());
+        savedInstanceState.putInt("shoes", shoes.getVisibility());
+
+        super.onSaveInstanceState(savedInstanceState);
     }
 
     @Override
     public void onRestoreInstanceState(Bundle savedInstanceState) {
+
         super.onRestoreInstanceState(savedInstanceState);
 
+        // restore visibility
+        int hat = savedInstanceState.getInt("hat");
+        if (hat == 0) {
+            hat.setVisibility(View.VISIBLE);
+        }
+        else if (hat == 4) {
+            hat.setVisibility(View.INVISIBLE);
+        }
+        break;
     }
 
     public void onCheckboxClicked (View view) {
