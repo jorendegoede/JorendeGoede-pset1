@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -17,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-    
+
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         // imageviews
@@ -51,15 +50,100 @@ public class MainActivity extends AppCompatActivity {
 
         super.onRestoreInstanceState(savedInstanceState);
 
+        // imageviews
+        ImageView hat = (ImageView) findViewById(R.id.Hat);
+        ImageView ears = (ImageView) findViewById(R.id.Ears);
+        ImageView mustache = (ImageView) findViewById(R.id.Mustache);
+        ImageView eyes = (ImageView) findViewById(R.id.Eyes);
+        ImageView arms = (ImageView) findViewById(R.id.Arms);
+        ImageView mouth = (ImageView) findViewById(R.id.Mouth);
+        ImageView eyebrows = (ImageView) findViewById(R.id.Eyebrows);
+        ImageView nose = (ImageView) findViewById(R.id.Nose);
+        ImageView glasses = (ImageView) findViewById(R.id.Glasses);
+        ImageView shoes = (ImageView) findViewById(R.id.Shoes);
+
         // restore visibility
-        int hat = savedInstanceState.getInt("hat");
-        if (hat == 0) {
+        int hatstatus = savedInstanceState.getInt("hat");
+        int earsstatus = savedInstanceState.getInt("ears");
+        int mustachestatus = savedInstanceState.getInt("mustache");
+        int eyesstatus = savedInstanceState.getInt("eyes");
+        int armsstatus = savedInstanceState.getInt("arms");
+        int mouthstatus = savedInstanceState.getInt("mouth");
+        int eyebrowsstatus = savedInstanceState.getInt("eyebrows");
+        int nosestatus = savedInstanceState.getInt("nose");
+        int glassesstatus = savedInstanceState.getInt("glasses");
+        int shoesstatus = savedInstanceState.getInt("shoes");
+
+        // hat
+        if (hatstatus == 0) {
             hat.setVisibility(View.VISIBLE);
         }
-        else if (hat == 4) {
+        else if (hatstatus == 4) {
             hat.setVisibility(View.INVISIBLE);
         }
-        break;
+        // ears
+        if (earsstatus == 0) {
+            ears.setVisibility(View.VISIBLE);
+        }
+        else if (mustachestatus == 4) {
+            ears.setVisibility(View.INVISIBLE);
+        }
+        // mustache
+        if (mustachestatus == 0) {
+            mustache.setVisibility(View.VISIBLE);
+        }
+        else if (mustachestatus == 4) {
+            mustache.setVisibility(View.INVISIBLE);
+        }
+        // eyes
+        if (eyesstatus == 0) {
+            eyes.setVisibility(View.VISIBLE);
+        }
+        else if (eyesstatus == 4) {
+            eyes.setVisibility(View.INVISIBLE);
+        }
+        // arms
+        if (armsstatus == 0) {
+            arms.setVisibility(View.VISIBLE);
+        }
+        else if (armsstatus == 4) {
+            arms.setVisibility(View.INVISIBLE);
+        }
+        // mouth
+        if (mouthstatus == 0) {
+            mouth.setVisibility(View.VISIBLE);
+        }
+        else if (mouthstatus == 4) {
+            mouth.setVisibility(View.INVISIBLE);
+        }
+        // eyebrows
+        if (eyebrowsstatus == 0) {
+            eyebrows.setVisibility(View.VISIBLE);
+        }
+        else if (eyebrowsstatus == 4) {
+            eyebrows.setVisibility(View.INVISIBLE);
+        }
+        // nose
+        if (nosestatus == 0) {
+            nose.setVisibility(View.VISIBLE);
+        }
+        else if (nosestatus == 4) {
+            nose.setVisibility(View.INVISIBLE);
+        }
+        // glasses
+        if (glassesstatus == 0) {
+            glasses.setVisibility(View.VISIBLE);
+        }
+        else if (glassesstatus == 4) {
+            glasses.setVisibility(View.INVISIBLE);
+        }
+        // shoes
+        if (shoesstatus == 0) {
+            shoes.setVisibility(View.VISIBLE);
+        }
+        else if (shoesstatus == 4) {
+            shoes.setVisibility(View.INVISIBLE);
+        }
     }
 
     public void onCheckboxClicked (View view) {
